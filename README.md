@@ -2,10 +2,12 @@
 
 Aigis Theme files for Kind, these need to be added to `styleguide/templates`which should look like this:
 
-`styleguide`
-` - build`
-` - templates`
-` - theme`
+```
+styleguide
+ - build`
+ - templates`
+ - theme
+```
 
 `build` is where gulp should be building your styleguide files, these are written over with every gulp file change
 `templates` is where these files (and any other theme files) should be placed, these are written over, however, a styleguide needs to be re-generated if `.ejs` files are updated. This can be done by changing any of your project files that trigger gulp file change.

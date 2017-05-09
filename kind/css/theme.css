@@ -40,6 +40,14 @@ tag:
     color: inherit;
 }
 
+.showhide-is--hidden {
+    display: none;
+}
+
+.showhide-is--visible {
+    display: block;
+}
+
 
 /*
 ---
@@ -148,6 +156,11 @@ tag: latest
     margin-top: 30px;
 }
 
+.aigis-module p:first-of-type {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
 .aigis-preview + pre {
     border-top: none;
     margin-top: 0;
@@ -201,6 +214,7 @@ tag: latest
     padding: 2px;
     text-decoration: none;
     margin: 0 8px;
+    font-size: 15px;
 }
 
 .aigis-categoryList li:hover a[href]:hover {}
@@ -261,6 +275,7 @@ tag: latest
     margin-bottom: 5px;
     font-size: 14px;
     display: inline-block;
+    border-radius: 3px;
 }
 
 .aigis-moduleList__item a:hover {
@@ -270,7 +285,7 @@ tag: latest
 .aigis-module__heading {
     font-family: 'Merriweather', serif;
     padding-bottom: 0.3em;
-    font-size: 1.75em;
+    font-size: 1.55em;
     margin-top: 30px;
     color: #2D2D2D;
     text-transform: capitalize;
@@ -294,14 +309,6 @@ category: body
 
 */
 
-.aigis-module__filepath {
-    display: block;
-    text-align: right;
-    margin-top: -50px;
-    margin-bottom: 30px;
-    font-size: 12px;
-    color: #ADADAD;
-}
 
 
 /*
@@ -419,3 +426,161 @@ body {
 .aigis-contents__body > h3 {
     font-size: 24px;
 }
+
+
+
+.design-view .aigis-module p:first-of-type,
+.design-view .aigis-preview + pre {
+    display: none;
+}
+
+.design-view .aigis-preview {
+    padding: 0;
+    border: none;
+    margin-top: 0;
+}
+
+
+.design-dev-button {
+    background: red;
+    border: none;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+.can-toggle {
+  position: relative;
+  float: right;
+  width: 128px;
+}
+.can-toggle *, .can-toggle *:before, .can-toggle *:after {
+  box-sizing: border-box;
+}
+.can-toggle input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.can-toggle input[type="checkbox"][disabled] ~ label .can-toggle__switch {
+  opacity: 0.4;
+}
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch:before {
+  content: attr(data-unchecked);
+  left: 0;
+}
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch:after {
+  content: attr(data-checked);
+}
+.can-toggle label {
+  font-family: monospace;
+  user-select: none;
+  text-transform: lowercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.can-toggle label .can-toggle__label-text {
+  flex: 1;
+  padding-left: 32px;
+}
+.can-toggle label .can-toggle__switch {
+  position: relative;
+}
+.can-toggle label .can-toggle__switch:before {
+  content: attr(data-checked);
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+.can-toggle label .can-toggle__switch:after {
+  content: attr(data-unchecked);
+  position: absolute;
+  z-index: 5;
+  text-align: center;
+  background: white;
+  transform: translate3d(0, 0, 0);
+}
+.can-toggle input[type="checkbox"][disabled] ~ label {
+  color: rgba(119, 119, 119, 0.5);
+}
+
+
+
+.can-toggle input[type="checkbox"]:focus ~ label .can-toggle__switch, .can-toggle input[type="checkbox"]:hover ~ label .can-toggle__switch {
+  background-color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:focus ~ label .can-toggle__switch:after, .can-toggle input[type="checkbox"]:hover ~ label .can-toggle__switch:after {
+  color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:hover ~ label {
+  color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:checked ~ label:hover {
+  color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch {
+  background-color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch:after {
+  color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:checked:focus ~ label .can-toggle__switch, .can-toggle input[type="checkbox"]:checked:hover ~ label .can-toggle__switch {
+  background-color: #56CBBE;
+}
+.can-toggle input[type="checkbox"]:checked:focus ~ label .can-toggle__switch:after, .can-toggle input[type="checkbox"]:checked:hover ~ label .can-toggle__switch:after {
+  color: #56CBBE;
+}
+.can-toggle label .can-toggle__label-text {
+  flex: 1;
+}
+.can-toggle label .can-toggle__switch {
+  transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
+  background: #56CBBE;
+}
+.can-toggle label .can-toggle__switch:before {
+  color: rgba(255, 255, 255, 0.5);
+}
+.can-toggle label .can-toggle__switch:after {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+  transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+  color: #56CBBE;
+}
+
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch:after {
+  transform: translate3d(55px, 0, 0);
+  width: 69px;
+}
+
+.can-toggle label {
+  font-size: 14px;
+}
+.can-toggle label .can-toggle__switch {
+  height: 30px;
+  flex: 0 0 128px;
+  border-radius: 4px;
+}
+.can-toggle label .can-toggle__switch:before {
+  left: 52px;
+  font-size: 14px;
+  line-height: 30px;
+  width: 60px;
+  color: white;
+  font-weight: bold;
+  padding: 0 12px;
+}
+.can-toggle label .can-toggle__switch:after {
+  top: 2px;
+  left: 2px;
+  border-radius: 2px;
+  font-weight: bold;
+  width: 50px;
+  line-height: 26px;
+  font-size: 14px;
+}
+

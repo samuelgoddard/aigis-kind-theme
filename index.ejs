@@ -9,10 +9,25 @@
     <link href="../../../templates/kind/css/highlight/okadia.css" rel="stylesheet">
     <link href="../../../templates/kind/css/theme.css" rel="stylesheet">
     <link href="<%- root %>main.css" rel="stylesheet">
+
+    <script>
+        function switchVisible() {
+            if (document.getElementById('dev-view')) {
+
+                if (document.getElementById('dev-view').style.display == 'none') {
+                    document.getElementById('dev-view').style.display = 'block';
+                    document.getElementById('design-view').style.display = 'none';
+                }
+                else {
+                    document.getElementById('dev-view').style.display = 'none';
+                    document.getElementById('design-view').style.display = 'block';
+                }
+            }
+        }
+    </script>
   </head>
 <body>
   <div class="aigis-container">
-    <!-- <%- include('sidemenu') %> -->
     <div class="aigis-contents">
       <div class="aigis-contents__body">
         <header class="aigis-header">
@@ -24,16 +39,33 @@
               </g>
             </svg>
 
+            <div class="can-toggle u-pull-right">
+              <input class="design-dev-button" id="a" type="checkbox" type="button" value="Click" onclick="switchVisible();">
+              <label for="a">
+                <div class="can-toggle__switch" data-checked="Design" data-unchecked="Dev"></div>
+              </label>
+            </div>
+
             <span class="u-pull-right">
                 <nav class="aigis-categoryList">
                     <%- helper.renderCollectionTree('category') %>
                 </nav>
             </span>
+
         </header>
-        <%- include('components') %>
+
+        <div id="dev-view" class="dev-view">
+            <%- include('components') %>
+        </div>
+
+        <div id="design-view" class="design-view" stlye="display: none;">
+            <%- include('components-design') %>
+        </div>
+
         <footer class="aigis-footer">Last update at <%- timestamp %></footer>
       </div>
     </div>
   </div>
+
 </body>
 </html>

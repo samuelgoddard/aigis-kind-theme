@@ -4,8 +4,8 @@ Aigis Theme files for Kind, these need to be added to `styleguide/templates`whic
 
 ```
 styleguide
- - build`
- - templates`
+ - build
+ - templates
  - theme
 ```
 

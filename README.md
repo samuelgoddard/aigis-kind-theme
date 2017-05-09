@@ -1,4 +1,4 @@
-# Kind Theme for [Aigis Generator](http://aigis.com)
+# Kind Theme for [Aigis Generator](https://github.com/pxgrid/aigis/)
 
 Aigis Theme files for Kind, these need to be added to `styleguide/templates`which should look like this:
 
